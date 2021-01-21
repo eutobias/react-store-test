@@ -3,10 +3,6 @@
   flex-direction: column;
   width         : rem(82px);
   flex-shrink   : 0;
-
-  @media (min-width: 1366px) {
-    width: rem(120px);
-  }
 }
 
 .videoWrapper {

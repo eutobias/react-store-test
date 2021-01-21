@@ -1,10 +1,11 @@
-import Header from 'components/Header/Header'
-import ProductInfo from 'components/ProductInfo/ProductInfo'
+import { useContext, useEffect } from 'react'
+import { DataContext } from 'contexts/context'
 
 import {getProduct, getProducts} from 'services/contentfulService'
 
-import { DataContext } from 'contexts/context'
-import { useContext, useEffect } from 'react'
+import Header from 'components/Header/Header'
+import ProductInfo from 'components/ProductInfo/ProductInfo'
+import ProductRecomendations from 'components/ProductRecomendations/ProductRecomendations'
 
 const Index = (props) => {
   const {state, dispatch} = useContext(DataContext)
@@ -19,6 +20,7 @@ const Index = (props) => {
     <>
       <Header />
       <ProductInfo />
+      <ProductRecomendations />
     </>
   );
 }

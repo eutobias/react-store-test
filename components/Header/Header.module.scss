@@ -1,12 +1,22 @@
 .headerWrapper {
-  display: flex;
+  display       : flex;
   flex-direction: column;
 }
 
-.navWrapper {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #ccc;
+.navBorderWrapper {
+  border-top   : 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  padding: rem(10px) rem(40px);
+}
+
+.navWrapper {
+  display    : flex;
+  align-items: center;
+  padding    : rem(10px) rem(40px);
+  max-width  : rem(1280px);
+  margin     : 0 auto;
+}
+
+.breadCrumbWrapper {
+  max-width: rem(1280px);
+  margin   : 0 auto;
 }

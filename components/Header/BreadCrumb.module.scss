@@ -4,23 +4,25 @@
   font-size  : rem(12px);
   line-height: rem(18px);
   color      : $headerLinksColor;
+  width      : rem(1280px);
 
   ul {
     padding: rem(10px) rem(40px);
+
     li {
       position: relative;
-      display: inline-block;
-      padding: 0 rem(10px);
+      display : inline-block;
+      padding : 0 rem(10px);
 
       &:first-child {
         padding-left: 0;
       }
 
       &:after {
-        content: '/';
+        content : '/';
         position: absolute;
-        top: 0;
-        right: 0;
+        top     : 0;
+        right   : 0;
       }
 
       &:last-child:after {
@@ -31,7 +33,7 @@
         font-weight: 700;
 
       }
-      
+
     }
   }
 }

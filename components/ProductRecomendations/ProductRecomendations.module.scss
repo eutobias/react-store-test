@@ -1,0 +1,117 @@
+.productRecomendationsWrapper {
+  max-width: rem(1280px);
+  padding  : 0 rem(40px);
+  margin   : rem(100px) auto 0 auto;
+
+  h3 {
+    font-family   : 'Montserrat';
+    font-size     : rem(26px);
+    font-weight   : 400;
+    line-height   : rem(38px);
+    text-align    : center;
+    text-transform: uppercase;
+    color         : $productSelectedSizeBg;
+    margin-bottom : rem(20px);
+  }
+}
+
+.slideWrapper {
+  display: block;
+  width  : 100%;
+
+  img {
+    width        : 100%;
+    display      : block;
+    margin-bottom: rem(10px);
+  }
+
+  .dataWrapper {
+    display: flex;
+    width  : 100%;
+
+    .priceWrapper {
+      margin-right: auto;
+
+      strike {
+        position       : relative;
+        font-size      : rem(14px);
+        text-decoration: line-through;
+        color          : $productPriceWithoutDiscount;
+        padding-right  : rem(10px);
+        margin-right   : rem(10px);
+
+        &:after {
+          content   : '';
+          background: $productPriceWithoutDiscount;
+          width     : 1px;
+          height    : 100%;
+          display   : block;
+          position  : absolute;
+          top       : 0;
+          right     : 0;
+        }
+      }
+
+      strong {
+        font-size  : rem(16px);
+        color      : $productName;
+        font-weight: 400;
+      }
+    }
+
+    .colorWrapper {
+      li {
+        display     : inline-block;
+        margin-right: rem(5px);
+        text-indent : -9000px;
+
+        width : rem(13px);
+        height: rem(13px);
+
+        border-radius: 7px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.slidesPagination {
+  margin-top     : rem(20px);
+  margin-bottom  : rem(100px);
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  color          : $paginationLinks;
+  font-size      : rem(14px);
+
+  .prev,
+  .next {
+    display        : flex;
+    width          : rem(35px);
+    height         : rem(35px);
+    align-items    : center;
+    justify-content: center;
+    margin         : 0 30px;
+    border         : 2px solid $paginationLinks;
+    border-radius  : 18px;
+    outline        : none;
+
+    svg {
+      transform-origin: 50% 50%;
+      transform       : rotate(-90deg);
+
+      path {
+        fill: $paginationLinks;
+      }
+    }
+  }
+
+  .prev {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}

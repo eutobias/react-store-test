@@ -81,7 +81,8 @@ const SelectedSizeWrapper = ({ state, selectSize, selectedSize }) => {
   return (
     <div className={styles.sizeWrapper}>
       <span className={styles.sizeNameWrapper}>
-        Tamanho <em>{selectedSize.fields.name}</em>
+        <span>Tamanho <em>{selectedSize.fields.name}</em></span>
+        <a href="#" className={styles.sizeGuideLink}>Guia de medidas</a>
       </span>
       <ul>
         {state.product.fields.sizes.map((v, i) => {

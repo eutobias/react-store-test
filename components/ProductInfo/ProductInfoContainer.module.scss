@@ -87,6 +87,17 @@
       }
     }
 
+    .sizeNameWrapper {
+      display: flex;
+
+      .sizeGuideLink {
+        margin-left    : auto;
+        color          : $productSelectedSizeBg;
+        text-decoration: underline;
+        margin-right   : rem(5px);
+      }
+    }
+
     .colorListItem {
       position     : relative;
       display      : inline-block;
@@ -148,7 +159,7 @@
 
   .addToCartButton {
     margin-top    : rem(50px);
-    display       : block;
+    display       : inline-block;
     background    : $addToCartButton;
     width         : 100%;
     text-align    : center;
@@ -159,6 +170,7 @@
     border-radius : 3px;
     color         : #fff;
     text-transform: uppercase;
+    margin-right  : rem(5px);
 
     &:hover {
       text-decoration: none;

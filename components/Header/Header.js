@@ -11,15 +11,19 @@ const Header = () => {
   return (
     <header className={styles.headerWrapper}>
       <Logo />
-      <div className={styles.navWrapper}>
-        <AuthNav />
-        <MainNav />
-        <SearchForm />
-        <CartItens />        
+      <div className={styles.navBorderWrapper}>
+        <div className={styles.navWrapper}>
+          <AuthNav />
+          <MainNav />
+          <SearchForm />
+          <CartItens />
+        </div>
       </div>
-      <BreadCrumb />
+      <div className={styles.breadCrumbWrapper}>
+        <BreadCrumb />
+      </div>
     </header>
   );
 }
- 
+
 export default Header;
