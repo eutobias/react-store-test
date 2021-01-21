@@ -1,0 +1,37 @@
+.breadCrumbWrapper {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size  : rem(12px);
+  line-height: rem(18px);
+  color      : $headerLinksColor;
+
+  ul {
+    padding: rem(10px) rem(40px);
+    li {
+      position: relative;
+      display: inline-block;
+      padding: 0 rem(10px);
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:after {
+        content: '/';
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+
+      a.selected {
+        font-weight: 700;
+
+      }
+      
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.logoWrapper {
+  position: relative;
+  padding: rem(26px) 0;
+  margin: 0 auto;
+
+  // Medida pra alinhar a pegadinha do logo 
+  // hahahaha muito boa
+  // &:after {
+  //   position: fixed;
+  //   width: 1px;
+  //   background: #000;
+  //   height: 100%;
+  //   left: 50%;
+  //   top: 0;
+  //   content: '';
+  // }
+  .logo {
+    padding-left: rem(114px);
+    span {
+      display: none;
+    }
+    
+    svg {
+      width : rem(148px);
+      height: rem(34px);
+      
+      path {
+        fill: #DE8F75;
+      }
+    }
+  }
+}

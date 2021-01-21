@@ -1,0 +1,20 @@
+.cartItens {
+  margin-left: rem(30px);
+  font-family: 'Montserrat';
+  font-size: rem(12px);
+  line-height: rem(20px);
+
+  a {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .cartIcon {
+    display        : inline-block;
+    text-indent    : -9000px;
+    width          : rem(27px);
+    height         : rem(24px);
+    background     : transparent url('/shopcart-icon.svg') no-repeat;
+    background-size: rem(27px) rem(24px);
+  }
+}

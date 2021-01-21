@@ -1,0 +1,12 @@
+.productSelectedImage {
+  display  : block;
+  width    : 100%;
+  height   : auto;
+  flex-grow: 1;
+  margin   : 0 rem(106px) 0 rem(56px);
+
+  @media (min-width: 1440px) {
+    max-width: 650px;
+    margin   : 0 auto;
+  }
+}

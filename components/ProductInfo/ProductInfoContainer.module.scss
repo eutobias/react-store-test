@@ -1,0 +1,174 @@
+.productInfoContainer {
+  font-family  : 'Montserrat';
+  width        : rem(444px);
+  flex-shrink  : 0;
+  border       : 2px solid $productContainerInfoBorder;
+  border-radius: 3px;
+  padding      : rem(20px);
+
+  @media (max-width: 1050px) {
+    width      : auto;
+    flex-shrink: unset;
+  }
+
+  .productName {
+    font-size     : rem(26px);
+    font-weight   : 700;
+    line-height   : (32px);
+    text-transform: uppercase;
+    color         : $productName;
+  }
+
+  .productCode {
+    display    : block;
+    font-size  : rem(14px);
+    line-height: rem(14px);
+    color      : $productName;
+  }
+
+  .priceWrapper {
+    margin-top: rem(25px);
+
+    strike {
+      position       : relative;
+      font-size      : rem(14px);
+      text-decoration: line-through;
+      color          : $productPriceWithoutDiscount;
+      padding-right  : rem(10px);
+      margin-right   : rem(10px);
+
+      &:after {
+        content   : '';
+        background: $productPriceWithoutDiscount;
+        width     : 1px;
+        height    : 100%;
+        display   : block;
+        position  : absolute;
+        top       : 0;
+        right     : 0;
+      }
+    }
+
+    strong {
+      font-size  : rem(20px);
+      color      : $productPrice;
+      font-weight: 700;
+    }
+
+  }
+
+  .paymentPartsWrapper {
+    font-size  : rem(12px);
+    color      : $productPricePaymentParts;
+    line-height: rem(18px);
+  }
+
+  .colorsWrapper,
+  .sizeWrapper {
+    padding-top: rem(35px);
+    font-size  : rem(14px);
+
+    .colorNameWrapper,
+    .sizeNameWrapper {
+      display      : block;
+      margin-bottom: 10px;
+
+      em {
+        color     : $productSelectedInfo;
+        font-style: normal;
+
+        &:before {
+          content: '(';
+        }
+
+        &:after {
+          content: ')';
+        }
+      }
+    }
+
+    .colorListItem {
+      position     : relative;
+      display      : inline-block;
+      text-indent  : -9000px;
+      width        : rem(22px);
+      height       : rem(22px);
+      border-radius: 11px;
+      cursor       : pointer;
+      margin       : 3px 15px 3px 3px;
+
+      &:hover:after {
+        position     : absolute;
+        top          : -3px;
+        left         : -3px;
+        background   : transparent;
+        border       : 2px solid $productContainerInfoBorder;
+        border-radius: 14px;
+        width        : rem(24px);
+        height       : rem(24px);
+        content      : '';
+      }
+
+      &.colorListItem_selected:after,
+      &.colorListItem_selected:hover:after {
+        position     : absolute;
+        top          : -3px;
+        left         : -3px;
+        background   : transparent;
+        border       : 2px solid $productSelectedColorBorder;
+        border-radius: 14px;
+        width        : rem(24px);
+        height       : rem(24px);
+        content      : '';
+      }
+    }
+
+    .sizeListItem {
+      display   : inline-block;
+      border    : 1px solid $productSelectSizeBorder;
+      color     : $productSelectedInfo;
+      padding   : 6px 8px;
+      margin    : 0 5px 5px 0;
+      cursor    : pointer;
+      background: #FFF;
+      width     : rem(35px);
+
+      &:hover {
+        border-color: $productContainerInfoBorder;
+      }
+
+      &.sizeListItem_selected {
+        background : $productSelectedSizeBg;
+        color      : $productSelectedSizeColor;
+        font-weight: 700;
+      }
+    }
+
+  }
+
+  .addToCartButton {
+    margin-top    : rem(50px);
+    display       : block;
+    background    : $addToCartButton;
+    width         : 100%;
+    text-align    : center;
+    font-family   : 'Montserrat';
+    font-size     : rem(18px);
+    font-weight   : 300;
+    line-height   : rem(60px);
+    border-radius : 3px;
+    color         : #fff;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .productDescription {
+    margin-top : rem(15px);
+    font-size  : rem(14px);
+    line-height: rem(28px);
+    color      : $productName;
+  }
+}

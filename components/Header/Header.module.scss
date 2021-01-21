@@ -1,0 +1,12 @@
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: rem(10px) rem(40px);
+}

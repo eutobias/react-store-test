@@ -1,0 +1,49 @@
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin : 0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color          : inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+section,
+header,
+footer,
+div,
+nav,
+form,
+label,
+input {
+  padding: 0;
+  margin : 0;
+}
+
+ul {
+  list-style: none;
+}

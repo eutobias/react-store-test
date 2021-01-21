@@ -1,0 +1,20 @@
+.mainNavWrapper {
+  margin: 0 auto;
+}
+
+.mainNav {
+  font-family: 'Montserrat';
+  font-size  : rem(14px);
+  line-height: rem(20px);
+  text-transform: uppercase;
+  color: $headerLinksColor;
+
+  li {
+    display: inline-block;
+    margin-right: rem(55px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
