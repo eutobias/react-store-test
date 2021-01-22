@@ -23,10 +23,6 @@
     height  : rem(45px);
     overflow: hidden;
 
-    @media (min-width: 1366px) {
-      height: rem(100px);
-    }
-
     &:after {
       background     : transparent url('/play-icon.svg') no-repeat center center;
       background-size: rem(35px) rem(35px);

@@ -6,9 +6,10 @@ import {getProduct, getProducts} from 'services/contentfulService'
 import Header from 'components/Header/Header'
 import ProductInfo from 'components/ProductInfo/ProductInfo'
 import ProductRecomendations from 'components/ProductRecomendations/ProductRecomendations'
+import Footer from 'components/Footer/Footer'
 
 const Index = (props) => {
-  const {state, dispatch} = useContext(DataContext)
+  const {_state, dispatch} = useContext(DataContext)
 
   useEffect(() => {
     if (props.products && props.product) {
@@ -21,6 +22,7 @@ const Index = (props) => {
       <Header />
       <ProductInfo />
       <ProductRecomendations />
+      <Footer />
     </>
   );
 }

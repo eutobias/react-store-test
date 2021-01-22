@@ -1,0 +1,34 @@
+.socialMediaIcons {
+  position: absolute;
+  top     : rem(20px);
+  left    : rem(70px);
+
+  li {
+    display: inline-block;
+    margin-right: rem(30px);
+
+    a {
+      display    : block;
+      text-indent: -9000px;
+
+      &.facebook {
+        background     : transparent url(/facebook.svg) no-repeat;
+        background-size: rem(12px) rem(25px);
+        width          : rem(12px);
+        height         : rem(25px);
+      }
+      &.instagram {
+        background     : transparent url(/instagram.svg) no-repeat;
+        background-size: rem(24px) rem(25px);
+        width          : rem(24px);
+        height         : rem(25px);
+      }
+      &.pinterest {
+        background     : transparent url(/pinterest.svg) no-repeat;
+        background-size: rem(25px) rem(25px);
+        width          : rem(25px);
+        height         : rem(25px);
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.footerNavigationWrapper {
+  width: calc(100% - 640px);
+  padding-top: rem(60px);
+  margin-left: rem(300px);
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: rem(14px);
+  line-height: rem(28px);
+  font-family: 'Montserrat';
+
+  .title {
+    color: #AEB6C1;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: rem(12px);
+  }
+}

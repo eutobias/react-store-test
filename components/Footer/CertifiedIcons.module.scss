@@ -1,0 +1,14 @@
+.certifiedIconsWrapper {
+  position: absolute;
+  left: rem(70px);
+  top: rem(97px);
+
+  li {
+    display: inline-block;
+    margin-right: rem(32px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
