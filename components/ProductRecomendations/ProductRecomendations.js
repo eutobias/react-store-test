@@ -1,5 +1,7 @@
 import styles from './ProductRecomendations.module.scss'
 
+import Link from 'next/link'
+
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -35,7 +37,6 @@ const ProductRecomendations = () => {
     const page = Math.ceil((e.activeIndex + 1) / 4)
 
     setPagination({ current: page, count: pages })
-
   }
 
   return (
@@ -85,33 +86,36 @@ const ProductRecomendations = () => {
 
 const RecomendationSlide = ({ data }) => {
   return (
-    <section className={styles.slideWrapper}>
-      <img src={data.fields.photos[0].fields.file.url} alt={data.fields.name} />
-      <div className={styles.dataWrapper}>
-        {
-          data.fields.priceWithDiscount ?
-            (
-              <span className={styles.priceWrapper}>
-                <strike>{numberFormat(data.fields.price)}</strike>
-                <strong>{numberFormat(data.fields.priceWithDiscount)}</strong>
-              </span>
-            ) :
-            (
-              <span className={styles.priceWrapper}>
-                <strong>{numberFormat(data.fields.price)}</strong>
-              </span>
-            )
-        }
-
-        <ul className={styles.colorWrapper}>
-          {
-            data.fields.colors.map((v, i) => {
-              return (<li key={`color-${i}`} style={{ backgroundColor: v.fields.rgb }}>{v.fields.name}</li>)
-            })
-          }
-        </ul>
-      </div>
-    </section>
+    <Link href={`/${data.sys.id}`}>
+      <a>
+        <section className={styles.slideWrapper}>
+          <img src={data.fields.photos[0].fields.file.url} alt={data.fields.name} />
+          <div className={styles.dataWrapper}>
+            {
+              data.fields.priceWithDiscount ?
+                (
+                  <span className={styles.priceWrapper}>
+                    <strike>{numberFormat(data.fields.price)}</strike>
+                    <strong>{numberFormat(data.fields.priceWithDiscount)}</strong>
+                  </span>
+                ) :
+                (
+                  <span className={styles.priceWrapper}>
+                    <strong>{numberFormat(data.fields.price)}</strong>
+                  </span>
+                )
+            }
+            <ul className={styles.colorWrapper}>
+              {
+                data.fields.colors.map((v, i) => {
+                  return (<li key={`color-${i}`} style={{ backgroundColor: v.fields.rgb }}>{v.fields.name}</li>)
+                })
+              }
+            </ul>
+          </div>
+        </section>
+      </a>
+    </Link>
   )
 }
 

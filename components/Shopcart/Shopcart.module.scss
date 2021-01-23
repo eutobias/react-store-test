@@ -1,0 +1,167 @@
+.modalWrapper {
+  position: fixed;
+  top     : 0;
+  right   : 0;
+  width   : rem(525px);
+  height  : 100%;
+  z-index : 1001;
+
+  .modalContainer {
+    background    : #fff;
+    display       : flex;
+    flex-direction: column;
+    height        : 100%;
+    font-family   : 'Montserrat';
+
+    .closeButton {
+      position: absolute;
+      top     : rem(11px);
+      right   : rem(11px);
+    }
+
+    .titleWrapper {
+      flex-shrink  : 0;
+      margin       : 0 rem(40px) rem(20px) rem(20px);
+      padding      : rem(20px);
+      border-bottom: 1px solid #E3E3E3;
+
+      h3 {
+        font-size     : 26px;
+        line-height   : 163.42%;
+        color         : $footerFormButtonBg;
+        font-weight   : normal;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: rem(18px);
+        color    : #AEB6C1
+      }
+    }
+
+    .productWrapper {
+      flex-grow : 1;
+      overflow-y: auto;
+
+      .product {
+        display: flex;
+        padding: rem(30px);
+
+        &:first-child {
+          padding-top: rem(10px);
+        }
+
+        img {
+          display: block;
+          width  : rem(46px);
+          height : auto;
+        }
+
+        .productInfo {
+          display        : flex;
+          flex-direction : column;
+          margin-left    : rem(40px);
+          align-items    : flex-start;
+          justify-content: center;
+          width          : rem(240px);
+
+          .productName {
+            font-size: rem(12px);
+          }
+
+          .productPrice {
+            font-size: rem(14px);
+
+            .discount {
+              position       : relative;
+              font-weight    : normal;
+              color          : $productPriceWithoutDiscount;
+              text-decoration: line-through;
+              display        : inline-block;
+              font-size      : rem(13px);
+
+              &:after {
+                display   : inline-block;
+                background: $productPriceWithoutDiscount;
+                width     : 1px;
+                height    : 12px;
+                margin    : 0 rem(10px);
+                content   : ''
+              }
+            }
+
+            .price {
+              display: inline-block;
+            }
+          }
+        }
+
+        .quantityHandler {
+          display    : flex;
+          align-items: center;
+          font-size  : rem(14px);
+          color      : $cartQuantityColor;
+
+          span {
+            display: block;
+            padding: rem(5px);
+          }
+
+          a {
+            display    : flex;
+            align-items: center;
+            padding    : rem(10px);
+            height     : rem(30px);
+          }
+        }
+
+        .removerWrapper {
+          display    : flex;
+          align-items: center;
+          margin-left: auto;
+
+          a {
+            display    : flex;
+            align-items: center;
+            padding    : rem(10px);
+            height     : rem(30px);
+          }
+        }
+      }
+    }
+
+    .freeDeliveryMessage {
+      flex-shrink: 0;
+      background : $cartFreeDeliveryBg;
+      color      : #fff;
+      font-size  : rem(14px);
+      padding    : rem(20px);
+      text-align : center;
+    }
+
+    .purchaseInfoWrapper {
+      flex-shrink: 0;
+      display    : flex;
+      background : $cartPurchaseInfoBg;
+      padding    : rem(24px) rem(40px);
+
+      .purchasePrice {
+        margin-right: auto;
+
+        strong {
+          font-size: rem(16px);
+        }
+
+        span {
+          font-size: rem(12px);
+        }
+      }
+
+      .button {
+        max-width  : 50%;
+        font-size  : rem(12px);
+        line-height: rem(42px);
+      }
+    }
+  }
+}

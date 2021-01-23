@@ -1,11 +1,11 @@
 import styles from './CartItens.module.scss'
 
-const CartItens = () => {
+const CartItens = ({cartItensCount, showCart}) => {
   return (
     <section className={styles.cartItens}>
-      <a href="#">
+      <a href="#" onClick={showCart}>
         <span className={styles.cartIcon}>Itens no carrinho</span>
-        <span>0</span>
+        <span>{cartItensCount}</span>
       </a>
     </section>
   );

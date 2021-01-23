@@ -1,6 +1,7 @@
 import styles from './ProductInfoContainer.module.scss'
 
 import numberFormat from 'helpers/numberFormat'
+import Button from 'components/Button';
 
 const ProductInfoContainer = ({ state, selectSize, selectedSize, selectColor, selectedColor, addToCart }) => {
   return (
@@ -24,7 +25,7 @@ const ProductInfoContainer = ({ state, selectSize, selectedSize, selectColor, se
 
         }
 
-        <a href="#" className={styles.addToCartButton}>Adicionar à sacola</a>
+        <Button className={styles.addToCartButton} onClick={addToCart} text="Adicionar à sacola" />
 
         <p className={styles.productDescription}>{state.product.fields.description}</p>
       </section>

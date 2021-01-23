@@ -37,11 +37,10 @@ const Index = (props) => {
 
 export default Index;
 
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
   const products = await getProducts()
-  const product = await getProduct('sI8OUlaogoQpYQa96PHsE')
+  const product = await getProduct(context.params.pid)
 
   return {
     props: {products, product}, // will be passed to the page component as props

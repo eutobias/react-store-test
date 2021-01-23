@@ -12,7 +12,7 @@ const ProductInfo = (props) => {
   const [selectedSize, setSelectedSize] = useState(null)
   const [selectedColor, setSelectedColor] = useState(null)
 
-  const { state } = useContext(DataContext)
+  const { state, dispatch } = useContext(DataContext)
 
   useEffect(() => {
 
@@ -37,8 +37,10 @@ const ProductInfo = (props) => {
     setSelectedColor(color)
   }
 
-  const addToCart= () => {
-    console.log('addToCart')
+  const addToCart = (e) => {
+    dispatch({ type: 'ADD_TO_CART' })
+    dispatch({ type: 'SHOW_ADD_TO_CART_MODAL', payload: { product: state.product } })
+    e.preventDefault()
   }
 
   return (

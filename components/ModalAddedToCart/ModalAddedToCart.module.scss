@@ -1,0 +1,49 @@
+.modalWrapper {
+  position : fixed;
+  top      : 50%;
+  left     : 50%;
+  transform: translate(-50%, -50%);
+  z-index  : 1001;
+
+  .modalContainer {
+    position  : relative;
+    background: #fff;
+    padding   : rem(70px) rem(70px) rem(20px) rem(70px);
+
+    img {
+      display: block;
+      width  : rem(305px);
+    }
+
+    p {
+      font-family   : 'Montserrat';
+      font-size     : rem(22px);
+      color         : $footerFormButtonBg;
+      text-align    : center;
+      text-transform: uppercase;
+      width         : rem(305px);
+      margin        : rem(20px) 0;
+    }
+
+    .button {
+      display: block;
+      width  : auto;
+    }
+
+    .link {
+      font-family: 'Montserrat';
+      font-size  : rem(14px);
+      color      : #AEB6C1;
+      display: block;
+      text-align: center;
+      text-decoration: underline;
+      margin-top: rem(20px);
+    }
+  }
+
+  .closeButton {
+    position: absolute;
+    top     : rem(19px);
+    right   : rem(19px);
+  }
+}
