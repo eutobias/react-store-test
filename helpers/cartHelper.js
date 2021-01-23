@@ -50,6 +50,9 @@ const decreaseProductQuantity = (cart, item) => {
   _cart.map((v) => {
     if (v.id === _item.id) {
       v.quantity -= 1
+
+      if (v.quantity === 0)
+        v.quantity = 1
     }
   })
 
