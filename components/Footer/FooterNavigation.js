@@ -10,7 +10,7 @@ const FooterNavigation = () => {
 
   return (
     <nav className={styles.footerNavigationWrapper}>
-      <ul className={institucionalOpen ? styles.open : status.close}>
+      <ul className={institucionalOpen ? styles.open : styles.close}>
         <li className={styles.title} onClick={() => setInstitucionalOpen(!institucionalOpen)}>Institucional</li>
         <li>
           <ul>
@@ -20,7 +20,7 @@ const FooterNavigation = () => {
           </ul>
         </li>
       </ul>
-      <ul className={infoOpen ? styles.open : status.close}>
+      <ul className={infoOpen ? styles.open : styles.close}>
         <li className={styles.title} onClick={() => setInfoOpen(!infoOpen)}>Informações</li>
         <li>
           <ul>
@@ -30,7 +30,7 @@ const FooterNavigation = () => {
           </ul>
         </li>
       </ul>
-      <ul className={conhecaOpen ? styles.open : status.close}>
+      <ul className={conhecaOpen ? styles.open : styles.close}>
         <li className={styles.title} onClick={() => setConhecaOpen(!conhecaOpen)}>Conheça</li>
         <li>
           <ul>
