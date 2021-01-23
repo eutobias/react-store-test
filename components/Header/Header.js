@@ -19,7 +19,9 @@ const Header = () => {
   const [cartItensCount, setCartItensCount] = useState(0)
 
   const showCart = (e) => {
-    dispatch({ type: 'SHOW_CART_MODAL' })
+    if (cartItensCount > 0) {
+      dispatch({ type: 'SHOW_CART_MODAL' })
+    }
     e.preventDefault()
   }
 
