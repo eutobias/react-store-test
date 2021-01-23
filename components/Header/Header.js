@@ -1,7 +1,5 @@
 import styles from './Header.module.scss'
 
-import useReactSimpleMatchMedia from 'react-simple-matchmedia'
-
 import AuthNav from './AuthNav';
 import MainNav from './MainNav';
 import Logo from './Logo';
