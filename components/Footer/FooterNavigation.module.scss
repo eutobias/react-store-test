@@ -1,19 +1,67 @@
 .footerNavigationWrapper {
-  width: calc(100% - 640px);
+  width      : calc(100% - 640px);
   padding-top: rem(60px);
   margin-left: rem(300px);
 
-  display: flex;
+  display        : flex;
   justify-content: space-between;
 
-  font-size: rem(14px);
+  font-size  : rem(14px);
   line-height: rem(28px);
   font-family: 'Montserrat';
 
+  @media (max-width: $mobileMaxWidth) {
+    padding       : 0;
+    margin-left   : 0;
+    width         : 100%;
+    flex-direction: column;
+
+    ul {
+      li {
+        position: relative;
+        padding : 0;
+
+        &.title {
+          background         : url('/plus.svg') no-repeat;
+          background-size    : rem(10px) rem(10px);
+          background-position: right rem(20px) center;
+        }
+      }
+
+      li>ul {
+        display: none
+      }
+
+      &.open {
+        li.title {
+          background         : url('/minus.svg') no-repeat;
+          background-size    : rem(10px) rem(10px);
+          background-position: right rem(20px) center;
+        }
+
+        li>ul {
+          display      : block;
+          border-bottom: 1px solid #AEB6C1;
+
+          li {
+            padding: rem(5px) rem(20px);
+          }
+        }
+      }
+    }
+  }
+
   .title {
-    color: #AEB6C1;
+    color         : #AEB6C1;
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: rem(12px);
+    font-weight   : 700;
+    font-size     : rem(12px);
+    padding       : rem(5px) rem(20px);
+
+    @media (max-width: $mobileMaxWidth) {
+      font-size    : rem(14px);
+      font-weight  : normal;
+      border-bottom: 1px solid #AEB6C1;
+    }
   }
 }

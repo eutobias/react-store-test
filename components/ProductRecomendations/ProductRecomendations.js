@@ -6,12 +6,15 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
+import { useMediaQuery } from 'helpers/useMediaQuery';
 import { DataContext } from 'contexts/context'
 import { useContext, useEffect, useState } from 'react'
 import numberFormat from 'helpers/numberFormat'
 import ArrowSVG from 'components/ArrowSVG';
 
 const ProductRecomendations = () => {
+  const showMobile = useMediaQuery('(max-width: 1023px)')
+
   const { state } = useContext(DataContext)
   const [products, setProducts] = useState(null)
   const [pagination, setPagination] = useState(null)
@@ -22,48 +25,80 @@ const ProductRecomendations = () => {
     }
   }, [state])
 
-  useEffect(() => {
-    if (products)
-      setupPagination()
-  }, [products])
-
   const setupPagination = (e) => {
-    if (!e) {
-      setPagination({ current: 1, count: Math.ceil(products.items.length / 4) })
+    if (!e)
       return
-    }
 
-    const pages = Math.ceil(e.slides.length / 4)
-    const page = Math.ceil((e.activeIndex + 1) / 4)
+    const itensPerPage = e.originalParams.slidesPerView
+    const totalItens = e.slides.length
+    const currentIndex = e.activeIndex 
+    const pagesCount = totalItens / itensPerPage
+    const currentPage = (currentIndex / itensPerPage) + 1
 
-    setPagination({ current: page, count: pages })
+    setPagination({ current: currentPage, count: pagesCount })
   }
 
   return (
     <section className={styles.productRecomendationsWrapper}>
       <h3>Quem viu, viu também</h3>
-      <Swiper
-        spaceBetween={15}
-        slidesPerView={4}
-        slidesPerGroup={4}
-        onSlideChange={(e) => {
-          setupPagination(e)
-        }}
-        navigation={{
-          prevEl: `.${styles.prev}`,
-          nextEl: `.${styles.next}`
-        }}
-      >
-        {
-          products && products.items.map((v, i) => {
-            return (
-              <SwiperSlide key={i}>
-                <RecomendationSlide data={v} />
-              </SwiperSlide>
-            )
-          })
-        }
-      </Swiper>
+      {
+        products && showMobile && (
+          <Swiper
+            spaceBetween={15}
+            slidesPerView={2}
+            slidesPerGroup={2}
+            onSlideChange={(e) => {
+              setupPagination(e)
+            }}
+            onSwiper={(e) => {
+              setupPagination(e)
+            }}
+            navigation={{
+              prevEl: `.${styles.prev}`,
+              nextEl: `.${styles.next}`
+            }}
+          >
+            {
+              products && products.items.map((v, i) => {
+                return (
+                  <SwiperSlide key={i}>
+                    <RecomendationSlide data={v} />
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
+        )
+      }
+      {
+        products && !showMobile && (
+          <Swiper
+            spaceBetween={15}
+            slidesPerView={4}
+            slidesPerGroup={4}
+            onSlideChange={(e) => {
+              setupPagination(e)
+            }}
+            onSwiper={(e) => {
+              setupPagination(e)
+            }}
+            navigation={{
+              prevEl: `.${styles.prev}`,
+              nextEl: `.${styles.next}`
+            }}
+          >
+            {
+              products && products.items.map((v, i) => {
+                return (
+                  <SwiperSlide key={i}>
+                    <RecomendationSlide data={v} />
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
+        )
+      }
 
       <div className={styles.slidesPagination}>
         <div className={styles.prev}>
@@ -85,6 +120,8 @@ const ProductRecomendations = () => {
 }
 
 const RecomendationSlide = ({ data }) => {
+  const showMobile = useMediaQuery('(max-width: 1023px)')
+
   return (
     <Link href={`/${data.sys.id}`}>
       <a>
@@ -105,17 +142,26 @@ const RecomendationSlide = ({ data }) => {
                   </span>
                 )
             }
-            <ul className={styles.colorWrapper}>
-              {
-                data.fields.colors.map((v, i) => {
-                  return (<li key={`color-${i}`} style={{ backgroundColor: v.fields.rgb }}>{v.fields.name}</li>)
-                })
-              }
-            </ul>
+            {!showMobile && (
+              <ul className={styles.colorWrapper}>
+                {
+                  data.fields.colors.map((v, i) => {
+                    return (<li key={`color-${i}`} style={{ backgroundColor: v.fields.rgb }}>{v.fields.name}</li>)
+                  })
+                }
+              </ul>
+            )}
+
+            {showMobile && (
+              data.fields.priceWithDiscount ?
+                <span className={styles.parcialPayment}>ou 6x de {numberFormat(data.fields.priceWithDiscount / 6)}</span>
+                :
+                <span className={styles.parcialPayment}>ou 6x de {numberFormat(data.fields.price / 6)}</span>
+            )}
           </div>
         </section>
       </a>
-    </Link>
+    </Link >
   )
 }
 

@@ -2,9 +2,13 @@
   border-top: 2px solid $footerBorder;
 
   .footerContainer {
-    position: relative;
-    max-width: 1280px;
-    margin: 0 auto;
+    position      : relative;
+    max-width     : 1280px;
+    margin        : 0 auto;
     padding-bottom: rem(60px);
+
+    @media (max-width: $mobileMaxWidth) {
+      padding: 0;
+    }
   }
 }

@@ -2,10 +2,21 @@
   position: absolute;
   top     : rem(20px);
   left    : rem(70px);
+  
+  @media (max-width: $mobileMaxWidth) {
+    position: static;
+    margin: rem(25px) auto;
+    display: flex;
+    justify-content: center;
+  }
 
   li {
     display: inline-block;
     margin-right: rem(30px);
+    
+    &:last-child {
+      margin-right: 0;
+    }
 
     a {
       display    : block;

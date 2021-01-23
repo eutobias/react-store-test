@@ -6,6 +6,10 @@
   height  : 100%;
   z-index : 1001;
 
+  @media (max-width: $mobileMaxWidth) {
+    width: 100%;
+  }
+
   .modalContainer {
     background    : #fff;
     display       : flex;
@@ -25,17 +29,30 @@
       padding      : rem(20px);
       border-bottom: 1px solid #E3E3E3;
 
+      @media (max-width: $mobileMaxWidth) {
+        margin : 0 rem(20px) rem(10px) rem(10px);
+        padding: rem(10px);
+      }
+
       h3 {
         font-size     : 26px;
         line-height   : 163.42%;
         color         : $footerFormButtonBg;
         font-weight   : normal;
         text-transform: uppercase;
+
+        @media (max-width: $mobileMaxWidth) {
+          font-size: rem(18px);
+        }
       }
 
       p {
         font-size: rem(18px);
-        color    : #AEB6C1
+        color    : #AEB6C1;
+
+        @media (max-width: $mobileMaxWidth) {
+          font-size: rem(14px);
+        }
       }
     }
 
@@ -47,8 +64,16 @@
         display: flex;
         padding: rem(30px);
 
+        @media (max-width: $mobileMaxWidth) {
+          padding: rem(10px);
+        }
+
         &:first-child {
           padding-top: rem(10px);
+
+          @media (max-width: $mobileMaxWidth) {
+            padding-top: 0;
+          }
         }
 
         img {
@@ -64,6 +89,12 @@
           align-items    : flex-start;
           justify-content: center;
           width          : rem(240px);
+
+          @media (max-width: $mobileMaxWidth) {
+            width       : auto;
+            margin-left : rem(10px);
+            margin-right: auto;
+          }
 
           .productName {
             font-size: rem(12px);
@@ -137,6 +168,15 @@
       font-size  : rem(14px);
       padding    : rem(20px);
       text-align : center;
+
+      @media (max-width: $mobileMaxWidth) {
+        padding: rem(10px);
+
+        strong {
+          display    : block;
+          font-weight: normal;
+        }
+      }
     }
 
     .purchaseInfoWrapper {
@@ -144,6 +184,10 @@
       display    : flex;
       background : $cartPurchaseInfoBg;
       padding    : rem(24px) rem(40px);
+
+      @media (max-width: $mobileMaxWidth) {
+        padding: rem(10px);
+      }
 
       .purchasePrice {
         margin-right: auto;
@@ -161,6 +205,14 @@
         max-width  : 50%;
         font-size  : rem(12px);
         line-height: rem(42px);
+
+        @media (max-width: $mobileMaxWidth) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 100%;
+          height: auto;
+        }
       }
     }
   }

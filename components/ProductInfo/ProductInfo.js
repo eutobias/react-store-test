@@ -2,12 +2,15 @@ import styles from './ProductInfo.module.scss'
 
 import { useContext, useEffect, useState } from 'react'
 import { DataContext } from 'contexts/context'
+import { useMediaQuery } from 'helpers/useMediaQuery';
 
 import ProductMediaList from './ProductMediaList'
 import ProductInfoContainer from './ProductInfoContainer'
 import ProductSelectedImage from './ProductSelectedImage'
 
 const ProductInfo = (props) => {
+  const showMobile = useMediaQuery('(max-width: 1023px)')
+
   const [selectedImage, setSelectedImage] = useState(null)
   const [selectedSize, setSelectedSize] = useState(null)
   const [selectedColor, setSelectedColor] = useState(null)
@@ -45,12 +48,17 @@ const ProductInfo = (props) => {
 
   return (
     <main className={styles.productInfoWrapper}>
-      <ProductMediaList
-        state={state}
-        selectVideo={selectVideo}
-        selectImage={selectImage} />
-
-      <ProductSelectedImage selectedImage={selectedImage} />
+      {
+        !showMobile &&
+        <ProductMediaList
+          state={state}
+          selectVideo={selectVideo}
+          selectImage={selectImage} />
+      }
+      {
+        !showMobile &&
+        <ProductSelectedImage selectedImage={selectedImage} />
+      }
 
       <ProductInfoContainer
         state={state}

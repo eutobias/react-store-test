@@ -1,9 +1,14 @@
 import styles from './ProductInfoContainer.module.scss'
 
+
+import { useMediaQuery } from 'helpers/useMediaQuery';
 import numberFormat from 'helpers/numberFormat'
 import Button from 'components/Button';
+import ImagesListMobile from './ImagesListMobile';
 
 const ProductInfoContainer = ({ state, selectSize, selectedSize, selectColor, selectedColor, addToCart }) => {
+  const showMobile = useMediaQuery('(max-width: 1023px)')
+
   return (
     state.product && (
       <section className={styles.productInfoContainer}>
@@ -11,23 +16,60 @@ const ProductInfoContainer = ({ state, selectSize, selectedSize, selectColor, se
         <span className={styles.productCode}>{state.product.fields.productCode}</span>
 
         {
-          state.product.fields.priceWithDiscount ?
-            <PriceWithDiscount state={state} /> :
-            <PriceWithoutDiscount state={state} />
+          !showMobile &&
+          (
+            <>
+              {
+                state.product.fields.priceWithDiscount ?
+                  <PriceWithDiscount state={state} /> :
+                  <PriceWithoutDiscount state={state} />
+              }
+
+              {
+                selectedColor && <SelectedColorWrapper state={state} selectedColor={selectedColor} selectColor={selectColor} />
+              }
+
+              {
+                selectedSize && <SelectedSizeWrapper state={state} selectedSize={selectedSize} selectSize={selectSize} />
+
+              }
+              <Button className={styles.addToCartButton} onClick={addToCart} text="Adicionar à sacola" />
+              <p className={styles.productDescription}>{state.product.fields.description}</p>
+            </>
+          )
         }
 
         {
-          selectedColor && <SelectedColorWrapper state={state} selectedColor={selectedColor} selectColor={selectColor} />
+          showMobile && (
+            <>
+              <ImagesListMobile photos={state.product.fields.photos} />
+
+              {
+                selectedColor && <SelectedColorWrapper state={state} selectedColor={selectedColor} selectColor={selectColor} />
+              }
+
+              {
+                selectedSize && <SelectedSizeWrapper state={state} selectedSize={selectedSize} selectSize={selectSize} />
+
+              }
+
+              <div className={styles.priceAndButtonWrapper}>
+                <div className={styles.priceAndButonContainer}>
+                  {
+                    state.product.fields.priceWithDiscount ?
+                      <PriceWithDiscount state={state} /> :
+                      <PriceWithoutDiscount state={state} />
+                  }
+                </div>
+
+                <Button className={styles.addToCartButton} onClick={addToCart} text="Adicionar à sacola" />
+              </div>
+
+              <h5 className={styles.descriptionTitle}>Descrição</h5>
+              <p className={styles.productDescription}>{state.product.fields.description}</p>
+            </>
+          )
         }
-
-        {
-          selectedSize && <SelectedSizeWrapper state={state} selectedSize={selectedSize} selectSize={selectSize} />
-
-        }
-
-        <Button className={styles.addToCartButton} onClick={addToCart} text="Adicionar à sacola" />
-
-        <p className={styles.productDescription}>{state.product.fields.description}</p>
       </section>
     )
 

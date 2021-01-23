@@ -2,25 +2,42 @@
   background: $footerFormButtonBg;
 
   .copyrightContainer {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    padding: rem(20px) 0;
+    max-width  : 1280px;
+    margin     : 0 auto;
+    display    : flex;
+    padding    : rem(20px) 0;
     align-items: center;
 
+    @media (max-width: $mobileMaxWidth) {
+      flex-direction: column;
+      padding       : rem(20px);
+      width         : 100%;
+    }
+
     p {
-      width: rem(730px);
+      width      : rem(730px);
       margin-left: rem(130px);
-      font-size: rem(12px);
+      font-size  : rem(12px);
       line-height: rem(17px);
       font-family: 'Montserrat';
-      color: #fff;
+      color      : #fff;
+
+      @media (max-width: $mobileMaxWidth) {
+        width : 100%;
+        margin: 0;
+      }
     }
 
     .logoFooter {
-      margin-left: auto;
+      margin-left : auto;
       margin-right: rem(90px);
-      width:  rem(111px);
+      width       : rem(111px);
+
+      @media (max-width: $mobileMaxWidth) {
+        width : rem(94px);
+        margin: rem(10px) auto 0;
+      }
+
       path {
         fill: #fff;
       }

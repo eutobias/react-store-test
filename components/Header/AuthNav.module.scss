@@ -2,28 +2,41 @@
   font-family: 'Montserrat';
   font-size  : rem(12px);
   line-height: rem(18px);
-  color: $headerLinksColor;
+  color      : $headerLinksColor;
 
   li {
     position: relative;
-    display: inline-block;
-    padding: 0 rem(10px);
-    
+    display : inline-block;
+    padding : 0 rem(10px);
+
     &:first-child {
       padding-left: 0;
     }
 
     &:after {
-      position: absolute;
-      top:0;
-      right:0;
-      width: 1px;
-      height: 100%;
+      position  : absolute;
+      top       : 0;
+      right     : 0;
+      width     : 1px;
+      height    : 100%;
       background: $headerLinksColor;
-      content: ' ';
+      content   : ' ';
     }
+
     &:last-child:after {
       display: none;
+    }
+
+
+    @media (max-width: $mobileMaxWidth) {
+      display: block;
+      padding: 0;
+      margin:  rem(20px) 0;
+      font-size: rem(16px);
+
+      &:after {
+        display: none;
+      }
     }
   }
 }

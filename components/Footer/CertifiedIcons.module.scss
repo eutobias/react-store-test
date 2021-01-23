@@ -2,6 +2,13 @@
   position: absolute;
   left: rem(70px);
   top: rem(97px);
+  
+  @media (max-width: $mobileMaxWidth) {
+    position: static;
+    margin: rem(25px) auto;
+    display: flex;
+    justify-content: center;
+  }
 
   li {
     display: inline-block;

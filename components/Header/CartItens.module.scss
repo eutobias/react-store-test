@@ -1,11 +1,24 @@
 .cartItens {
   margin-left: rem(30px);
   font-family: 'Montserrat';
-  font-size: rem(12px);
+  font-size  : rem(12px);
   line-height: rem(20px);
 
+  @media (max-width: $mobileMaxWidth) {
+    background     : transparent url('/shopcart-mobile.svg') no-repeat;
+    background-size: rem(23px) rem(27px);
+    margin-left    : auto;
+    width          : rem(23px);
+    height         : rem(27px);
+    display        : flex;
+    align-items    : flex-end;
+    justify-content: center;
+    margin-left    : rem(20px);
+    margin-right   : rem(20px);
+  }
+
   a {
-    display: flex;
+    display    : flex;
     align-items: flex-end;
   }
 
@@ -16,5 +29,9 @@
     height         : rem(24px);
     background     : transparent url('/shopcart-icon.svg') no-repeat;
     background-size: rem(27px) rem(24px);
+
+    @media (max-width: $mobileMaxWidth) {
+      display: none;
+    }
   }
 }

@@ -11,12 +11,25 @@
     flex-shrink: unset;
   }
 
+  @media (max-width: $mobileMaxWidth) {
+    border : none;
+    padding: 0;
+    width  : 100%;
+  }
+
   .productName {
     font-size     : rem(26px);
     font-weight   : 700;
     line-height   : (32px);
     text-transform: uppercase;
     color         : $productName;
+
+    @media (max-width: $mobileMaxWidth) {
+      font-size  : rem(18px);
+      font-weight: normal;
+      color      : $productSelectedColorBorder;
+      text-align : center;
+    }
   }
 
   .productCode {
@@ -24,6 +37,22 @@
     font-size  : rem(14px);
     line-height: rem(14px);
     color      : $productName;
+
+    @media (max-width: $mobileMaxWidth) {
+      font-size : rem(12px);
+      text-align: center;
+    }
+  }
+
+  .priceAndButtonWrapper {
+    display   : flex;
+    margin-top: rem(30px);
+
+    .priceAndButonContainer {
+      padding    : rem(5px) 0;
+      width      : 50%;
+      flex-shrink: 0;
+    }
   }
 
   .priceWrapper {
@@ -55,6 +84,28 @@
       font-weight: 700;
     }
 
+    @media (max-width: $mobileMaxWidth) {
+      margin: 0;
+
+      strike,
+      strong {
+        display: block;
+      }
+
+      strike {
+        font-size: rem(12px);
+
+        &:after {
+          display: none;
+        }
+      }
+
+      strong {
+        font-size  : rem(16px);
+        font-weight: normal;
+      }
+    }
+
   }
 
   .paymentPartsWrapper {
@@ -67,6 +118,11 @@
   .sizeWrapper {
     padding-top: rem(35px);
     font-size  : rem(14px);
+
+    @media (max-width: $mobileMaxWidth) {
+      padding-top: 0;
+      margin-top : rem(20px);
+    }
 
     .colorNameWrapper,
     .sizeNameWrapper {
@@ -158,12 +214,29 @@
   }
 
   .addToCartButton {
-    margin-top    : rem(50px);
-    margin-right  : rem(5px);
+    margin-top  : rem(50px);
+    margin-right: rem(5px);
 
     &:hover {
       text-decoration: none;
     }
+
+    @media (max-width: $mobileMaxWidth) {
+      margin         : 0;
+      font-size      : rem(18px);
+      line-height    : rem(18px);
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+    }
+  }
+
+  .descriptionTitle {
+    margin-top   : rem(30px);
+    margin-bottom: rem(5px);
+    font-size    : rem(14px);
+    font-weight  : normal;
+    color        : $productSelectedColorBorder;
   }
 
   .productDescription {
@@ -171,5 +244,9 @@
     font-size  : rem(14px);
     line-height: rem(28px);
     color      : $productName;
+
+    @media (max-width: $mobileMaxWidth) {
+      margin-top: 0;
+    }
   }
 }

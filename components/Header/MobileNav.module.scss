@@ -1,0 +1,33 @@
+.mobileNavWrapper {
+  display: block;
+
+  .menuButton {
+    margin-left: 20px;
+  }
+
+  .mobileNavOpen {
+    position: fixed;
+    z-index : 1001;
+    width   : 100%;
+    height  : 100%;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    bottom  : 0;
+  }
+
+  .mobileNavContainer {
+    position  : relative;
+    width     : 100%;
+    height    : 100%;
+    padding   : rem(30px) rem(20px);
+    background: #fff;
+
+    .closeButton {
+      position: absolute;
+      top     : rem(20px);
+      right   : rem(20px);
+    }
+  }
+
+}

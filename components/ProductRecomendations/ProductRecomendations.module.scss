@@ -3,6 +3,12 @@
   padding  : 0 rem(40px);
   margin   : rem(100px) auto 0 auto;
 
+  @media (max-width: $mobileMaxWidth) {
+    margin : rem(30px) 0;
+    padding: 0 rem(20px);
+    width  : 100%;
+  }
+
   h3 {
     font-family   : 'Montserrat';
     font-size     : rem(26px);
@@ -12,6 +18,10 @@
     text-transform: uppercase;
     color         : $productSelectedSizeBg;
     margin-bottom : rem(20px);
+
+    @media (max-width: $mobileMaxWidth) {
+      font-size: rem(22px);
+    }
   }
 }
 
@@ -28,6 +38,10 @@
   .dataWrapper {
     display: flex;
     width  : 100%;
+
+    @media (max-width: $mobileMaxWidth) {
+      flex-direction: column;
+    }
 
     .priceWrapper {
       margin-right: auto;
@@ -57,6 +71,14 @@
         color      : $productName;
         font-weight: 400;
       }
+
+      @media (max-width: $mobileMaxWidth) {
+
+        strike,
+        strong {
+          font-size: rem(12px);
+        }
+      }
     }
 
     .colorWrapper {
@@ -74,6 +96,12 @@
           margin-right: 0;
         }
       }
+    }
+
+    .parcialPayment {
+      margin-top: rem(5px);
+      font-size: rem(10px);
+      color: #202020;
     }
   }
 }

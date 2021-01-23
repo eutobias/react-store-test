@@ -5,14 +5,36 @@
   transform: translate(-50%, -50%);
   z-index  : 1001;
 
+  @media (max-width: $mobileMaxWidth) {
+    width : calc(100% - 30px);
+    margin: 0;
+  }
+
   .modalContainer {
     position  : relative;
     background: #fff;
     padding   : rem(70px) rem(70px) rem(20px) rem(70px);
 
+
+    @media (max-width: $mobileMaxWidth) {
+      padding        : rem(20px);
+      display        : flex;
+      flex-direction : column;
+      border-radius  : 3px;
+      justify-content: center;
+      align-items    : center;
+    }
+
     img {
       display: block;
       width  : rem(305px);
+
+      @media (max-width: $mobileMaxWidth) {
+        width     : calc(100% - 50px);
+        margin    : 0;
+        margin-top: rem(10px);
+        order     : 2;
+      }
     }
 
     p {
@@ -23,21 +45,41 @@
       text-transform: uppercase;
       width         : rem(305px);
       margin        : rem(20px) 0;
+
+      @media (max-width: $mobileMaxWidth) {
+        order    : 1;
+        font-size: rem(16px);
+        margin   : 0;
+        width    : rem(210px);
+      }
+
     }
 
     .button {
       display: block;
       width  : auto;
+
+      @media (max-width: $mobileMaxWidth) {
+        width     : calc(100% - 50px);
+        font-size : rem(12px);
+        margin-top: rem(10px);
+        order     : 3
+      }
     }
 
     .link {
-      font-family: 'Montserrat';
-      font-size  : rem(14px);
-      color      : #AEB6C1;
-      display: block;
-      text-align: center;
+      font-family    : 'Montserrat';
+      font-size      : rem(14px);
+      color          : #AEB6C1;
+      display        : block;
+      text-align     : center;
       text-decoration: underline;
-      margin-top: rem(20px);
+      margin-top     : rem(20px);
+
+      @media (max-width: $mobileMaxWidth) {
+        margin-top: rem(10px);
+        order     : 4;
+      }
     }
   }
 
@@ -45,5 +87,10 @@
     position: absolute;
     top     : rem(19px);
     right   : rem(19px);
+
+    @media (max-width: $mobileMaxWidth) {
+      top  : rem(11px);
+      right: rem(11px);
+    }
   }
 }

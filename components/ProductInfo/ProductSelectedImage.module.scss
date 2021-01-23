@@ -4,4 +4,9 @@
   height   : auto;
   flex-grow: 1;
   margin   : 0 rem(106px) 0 rem(56px);
+
+  @media (max-width: $mobileMaxWidth) {
+    margin: 0;
+    display: none;
+  }
 }

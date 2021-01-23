@@ -1,7 +1,7 @@
 .logoWrapper {
   position: relative;
-  padding: rem(26px) 0;
-  margin: 0 auto;
+  padding : rem(26px) 0;
+  margin  : 0 auto;
 
   // Medida pra alinhar a pegadinha do logo 
   // hahahaha muito boa
@@ -16,17 +16,36 @@
   // }
   .logo {
     padding-left: rem(114px);
+
     span {
       display: none;
     }
-    
+
     svg {
       width : rem(148px);
       height: rem(34px);
-      
+
       path {
         fill: #DE8F75;
       }
     }
   }
+
+  @media (max-width: $mobileMaxWidth) {
+    padding: 0;
+
+    .logo {
+      padding: 0;
+
+      span {
+        display: none;
+      }
+
+      svg {
+        width : rem(110px);
+        height: rem(25px);
+      }
+    }
+  }
+
 }

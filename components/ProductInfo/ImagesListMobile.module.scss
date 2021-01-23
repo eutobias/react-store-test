@@ -1,0 +1,9 @@
+.imagesListWrapper {
+  margin: rem(10px) auto 0 auto;
+  width: calc(100vw - 70px);
+  display: block;
+
+  .imageSlide {
+    width: 100%;
+  }
+}

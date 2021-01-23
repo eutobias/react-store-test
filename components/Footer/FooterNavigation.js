@@ -1,10 +1,17 @@
+import { useState } from 'react';
 import styles from './FooterNavigation.module.scss'
 
 const FooterNavigation = () => {
+  const [institucionalOpen, setInstitucionalOpen] = useState(false)
+  const [infoOpen, setInfoOpen] = useState(false)
+  const [conhecaOpen, setConhecaOpen] = useState(false)
+
+
+
   return (
     <nav className={styles.footerNavigationWrapper}>
-      <ul>
-        <li className={styles.title}>Institucional</li>
+      <ul className={institucionalOpen ? styles.open : status.close}>
+        <li className={styles.title} onClick={() => setInstitucionalOpen(!institucionalOpen)}>Institucional</li>
         <li>
           <ul>
             <li><a href="#">A Marca</a></li>
@@ -13,8 +20,8 @@ const FooterNavigation = () => {
           </ul>
         </li>
       </ul>
-      <ul>
-        <li className={styles.title}>Informações</li>
+      <ul className={infoOpen ? styles.open : status.close}>
+        <li className={styles.title} onClick={() => setInfoOpen(!infoOpen)}>Informações</li>
         <li>
           <ul>
             <li><a href="#">Formas de Pagamento</a></li>
@@ -23,8 +30,8 @@ const FooterNavigation = () => {
           </ul>
         </li>
       </ul>
-      <ul>
-        <li className={styles.title}>Conheça</li>
+      <ul className={conhecaOpen ? styles.open : status.close}>
+        <li className={styles.title} onClick={() => setConhecaOpen(!conhecaOpen)}>Conheça</li>
         <li>
           <ul>
             <li><a href="#">Franquias e Multimarcas</a></li>

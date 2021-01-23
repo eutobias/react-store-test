@@ -1,5 +1,10 @@
 .mainNavWrapper {
   margin: 0 auto;
+  
+  @media (max-width: $mobileMaxWidth) {
+    border-bottom: 1px solid $footerBorder;
+    margin-bottom: rem(20px);
+  }
 }
 
 .mainNav {
@@ -15,6 +20,12 @@
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+      font-size: rem(16px);
+      display: block;
+      margin: rem(20px) 0;
     }
   }
 }

@@ -3,6 +3,10 @@
   flex-direction: column;
   width         : rem(82px);
   flex-shrink   : 0;
+  
+  @media (max-width: $mobileMaxWidth) {
+    display: none;
+  }
 }
 
 .videoWrapper {

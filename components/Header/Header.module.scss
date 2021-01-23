@@ -1,6 +1,12 @@
 .headerWrapper {
   display       : flex;
   flex-direction: column;
+
+  @media (max-width:1023px) {
+    flex-direction: row;
+    align-items   : center;
+    height        : rem(60px);
+  }
 }
 
 .navBorderWrapper {
@@ -19,4 +25,6 @@
 .breadCrumbWrapper {
   max-width: rem(1280px);
   margin   : 0 auto;
+  width    : 100%;
+  overflow : hidden;
 }
